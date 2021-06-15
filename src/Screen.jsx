@@ -1,10 +1,19 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-export default class Screen extends Component {
-    
-    render() {
+function Screen(props) {
+
+    console.log(props);
         return (
-            <div className='screen'>This is my calculator screen</div>
+            <div className='screen'>{props.expression}</div>
         )
+    
+}
+
+function mapStateToProps(store) {
+    //store.expression is now available as props.expression in Screen component
+    return {
+        expression: store.expression
     }
 }
+export default connect(mapStateToProps)(Screen)

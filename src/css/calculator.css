@@ -7,8 +7,13 @@
 }
 
 .screen {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
     height: 8vh;
-    color: white;
+    color: black;
     border-radius: 10px;
     margin: 10px;
     background-color: white;

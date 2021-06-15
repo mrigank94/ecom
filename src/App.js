@@ -1,4 +1,3 @@
-
 import Screen from './Screen';
 import './css/calculator.css';
 import Keypad from './Keypad';
