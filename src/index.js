@@ -1,9 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
 import { createStore } from "redux";
 import App from "./App";
-import reducer from "./reducer/calculatorReducer";
+import "./index.css"
 
 // npm install redux
 // npm install react-redux
@@ -13,14 +14,11 @@ import reducer from "./reducer/calculatorReducer";
 //mapStateToProps in components which need any value in store
 //mapDispatchToProps in components which need to dispatch an action
 
-const store = createStore(reducer);
-console.log(store);
-
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
+    <BrowserRouter>
       <App />
-    </Provider>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
 );

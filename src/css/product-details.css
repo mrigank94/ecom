@@ -1,0 +1,19 @@
+.container {
+    height: 80vh;
+    display: flex;
+    justify-content: space-evenly;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-details {
+    width: 60%;
+    margin-left: 10%;
+}
+
+.name-rating {
+    display: flex;
+    width: 90%;
+    align-items: center;
+    justify-content: space-between;
+}
