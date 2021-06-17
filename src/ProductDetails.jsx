@@ -1,12 +1,17 @@
 import { useParams } from "react-router";
 import { findById } from "./data";
 import "./css/product-details.css";
-import { Button, Typography } from "@material-ui/core";
-import { Rating } from "@material-ui/lab";
+import { Button } from "@material-ui/core";
+import { connect } from "react-redux";
+import ProductDescription from "./ProductDescription";
 
-const ProductDetails = () => {
+const ProductDetails = (props) => {
   const params = useParams();
   const product = findById(params.id);
+
+  function handleCartAdd() {
+    props.addToCart(product);
+  }
 
   return (
     <div className="container">
@@ -19,31 +24,13 @@ const ProductDetails = () => {
         />
       </div>
       <div className="product-details">
-        <div className="name-rating">
-          <Typography variant="h4">{product.name}</Typography>
-          <Rating
-            name="half-rating-read"
-            defaultValue={product.rating}
-            precision={0.1}
-            readOnly
-          />
-        </div>
-        <Typography variant="h5" style={{ fontStyle: "italic" }}>
-          {product.category}
-        </Typography>
-        <Typography
-          variant="h6"
-          style={{ marginTop: "20px" }}
-          color="textSecondary"
-          component="p"
+        <ProductDescription product={product} />
+        <Button
+          style={{ marginTop: "40px" }}
+          variant="contained"
+          color="primary"
+          onClick={handleCartAdd}
         >
-          {product.description}
-        </Typography>
-        <Typography variant="h4" style={{ marginTop: "20px", color: "red" }}>
-          ₹{product.price}
-        </Typography>
-
-        <Button style={{ marginTop: "40px"}} variant="contained" color="primary">
           Add to cart
         </Button>
       </div>
@@ -51,4 +38,11 @@ const ProductDetails = () => {
   );
 };
 
-export default ProductDetails;
+function mapDispatchToProps(dispatch) {
+  return {
+    addToCart: function (item) {
+      dispatch({ type: "ITEM_ADDED_TO_CART", payload: item });
+    },
+  };
+}
+export default connect(null, mapDispatchToProps)(ProductDetails);

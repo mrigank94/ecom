@@ -2,7 +2,7 @@ const products = [
   {
     id: "dswabdsk32848sdkjkjl",
     name: "realme Narzo 30",
-    category: "electronics",
+    category: "Electronics",
     price: 14999,
     rating: 4.4,
     imageURL:
@@ -13,7 +13,7 @@ const products = [
   {
     id: "wewewert656ghghgh",
     name: "Pigeon Handy Chopper ",
-    category: "kitchen",
+    category: "Kitchen",
     price: 229,
     rating: 4.4,
     imageURL:
@@ -24,7 +24,7 @@ const products = [
   {
     id: "34gertrewrweeg",
     name: "Bonsai Artificial Plant",
-    category: "decorative",
+    category: "Decorative",
     price: 199,
     rating: 4.0,
     imageURL:
@@ -35,7 +35,7 @@ const products = [
   {
     id: "heifsklfsdlfmsdl;fm",
     name: "Dark Blue Dress",
-    category: "women wear",
+    category: "Apparel",
     price: 494,
     rating: 4.1,
     imageURL:
@@ -45,7 +45,7 @@ const products = [
   {
     id: "kwdhf3488",
     name: "Infinix Smart 4 Plus",
-    category: "Electonics",
+    category: "Electronics",
     price: 11000,
     rating: 4.4,
     imageURL:
@@ -67,7 +67,7 @@ const products = [
   {
     id: "grsed454tyff",
     name: "Fire TV Stick",
-    category: "Amazon Devices",
+    category: "Electronics",
     price: 3999,
     rating: 4.5,
     imageURL:
@@ -78,7 +78,7 @@ const products = [
   {
     id: "forzza",
     name: "Queen Bed",
-    category: "furniture",
+    category: "Furniture",
     price: 11699,
     rating: 3.6,
     imageURL:
@@ -100,7 +100,7 @@ const products = [
   {
     id: "NDUIWGSJASDIUD;fm",
     name: "Sofa",
-    category: "furniture",
+    category: "Furniture",
     price: 19499,
     rating: 4.7,
     imageURL:
@@ -110,7 +110,7 @@ const products = [
   {
     id: "1",
     name: "Clothes for Sai",
-    category: "Work Wear",
+    category: "Apparel",
     price: 150000,
     rating: 5,
     imageURL: "https://d17a17kld06uk8.cloudfront.net/products/KE84XU9/K3WJ2MFR-large.webp",

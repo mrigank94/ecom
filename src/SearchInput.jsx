@@ -2,6 +2,7 @@ import React from "react";
 import InputBase from "@material-ui/core/InputBase";
 import { fade, makeStyles } from "@material-ui/core/styles";
 import SearchIcon from "@material-ui/icons/Search";
+import { connect } from "react-redux";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -48,8 +49,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SearchInput() {
+function SearchInput(props) {
   const classes = useStyles();
+
+  function handleChange(event) {
+    props.changeSearchText(event.target.value)
+  }
 
   return (
     <div className={classes.root}>
@@ -64,8 +69,19 @@ export default function SearchInput() {
             input: classes.inputInput,
           }}
           inputProps={{ "aria-label": "search" }}
+          onChange={handleChange}
         />
       </div>
     </div>
   );
 }
+
+function mapDispatchToProps(dispatch) {
+    return {
+        changeSearchText: function(value) {
+            dispatch({type: 'SEARCH_INPUT_CHANGE', payload: value})
+        }
+    }
+}
+
+export default connect(null, mapDispatchToProps)(SearchInput)
